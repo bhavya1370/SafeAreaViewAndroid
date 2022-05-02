@@ -1,36 +1,7 @@
 # SafeAreaViewAndroid
 SafeAreaView for android React Native
-Problem:
-How do i use safeAreaView for my android based devices in react native?
+If you are a beginer android app developer and use react native, you may have faced the problem of using safe area view for android.
 
-Solution:
-
-create a new .js file (name it whatever you want, I named it GlobalStyles.js) and write the following code:
-
-import { StyleSheet, Platform, StatusBar } from 'react-native';
-
-export default StyleSheet.create({
-    droidSafeArea: {
-        flex: 1,
-        paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0
-    },
-});
-
-after this in your App.js import
-
-import GlobalStyles from './GlobalStyles'
-
-and whatever you want in your safe area view inside
-
-<SafeAreaView style={GlobalStyles.droidSafeArea}>
-      <View style={{ backgroundColor: "#eee", flex: 1 }}>
-        <View style={{
-          backgroundColor: "white",
-          padding: 15
-        }}
-        >
-          {/* <Text>Anything here will be shown in safe area</Text>  */}
-        </View>
-      </View>
-    </SafeAreaView>
+I have tried solving this problem by createing a new .js file called GlobalStyles, then createing a new screen Home.js and adding it to my App.js.
+this got my header just below the icon strip at the top, You'll probably need to adjust it a bit to fit whatever screen you're working on.
  
